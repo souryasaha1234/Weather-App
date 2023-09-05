@@ -110,9 +110,6 @@ window.addEventListener('load', function () {
                           <p><b><i class="bi bi-wind"></i> <u>wind speed</u></b> : ${
                               data.current.wind_speed
                           }</p>
-                          <p><b><i class="bi bi-cloud-drizzle"></i> <u>Rain</u></b> : ${
-                              data.current.rain.1h
-                          }mm/h</p>
                         </div>
                       </div>
                     `;
