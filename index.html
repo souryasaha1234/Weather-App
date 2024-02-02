@@ -3,44 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather</title>
+    <title>Weather App</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="src/style.css" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script defer src="src/script.js"></script>
   </head>
   <body>
-    <div class="header">
-      <h1>Your current weather</h1>
+    <div id="preloader">
+      <div id="loader"></div>
     </div>
 
-    <!-- container -->
-    <div class="container">
-      <h2><i class="bi bi-geo-alt-fill"></i> Kolkata, WB</h2>
-      <h1><i class="bi bi-thermometer-half"></i> 292.55&degC</h1>
-      
-      <div class="outer">
+    <div id="content" class="hidden">
+      <div class="header">
+        <h1>Your current weather</h1>
+      </div>
 
-        <div class="row">
-          <div class="data_elements sun">
-            <h1><i class="bi bi-brightness-alt-high-fill"></i></h1>
-            <p><b><i class="bi bi-sunrise"></i> <u>Sunrise</u></b> : 23:43</p>
-          <p><b><i class="bi bi-sunset"></i> <u>Sunset</u></b> : 23:43</p>
-          </div>
-          
-          <div class="data_elements">
-            <p><b><i class="bi bi-calendar-event"></i> <u>Date</u></b> : 23/43/3432</p>
-            <p><b><i class="bi bi-clock"></i> <u>Current time</u></b> : 23:43</p>
-          </div>
-        </div>
+      <!-- container -->
+      <div class="container">
+        <h2><i class="bi bi-geo-alt-fill"></i> --, --</h2>
+        <h1><i class="bi bi-thermometer-half"></i> --.--&degC</h1>
+        
+        <div class="outer">
 
-        <div class="data_elements">
-          <p><b><i class="bi bi-thermometer-high"></i> <u>feels like</u></b> : 292.87&degC</p>
-          <p><b><i class="bi bi-thermometer-half"></i> <u>pressurem</u></b> : 1014mbar</p>
-          <p><b><i class="bi bi-droplet"></i> <u>humidity</u></b> : 89%</p>
-          <p><b><i class="bi bi-brightness-high"></i> <u>UV iindex</u></b> : 0.16</p>
-          <p><b><i class="bi bi-clouds"></i> <u>clouds</u></b> : 53%</p>
-          <p><b><i class="bi bi-eye-slash"></i> <u>visibility</u></b> : 10000</p>
-          <p><b><i class="bi bi-wind"></i> <u>wind speed</u></b> : 3.13</p>
-          <!-- <p><b><i class="bi bi-cloud-drizzle"></i> <u>Rain</u></b> : 342mm/h</p> -->
+          <div class="row">
+            <div class="data_elements sun">
+              <h1><i class="bi bi-brightness-alt-high-fill"></i></h1>
+              <p><b><i class="bi bi-sunrise"></i> <u>Sunrise</u></b> : --:--</p>
+            <p><b><i class="bi bi-sunset"></i> <u>Sunset</u></b> : --:--</p>
+            </div>
+            
+            <div class="data_elements">
+              <p><b><i class="bi bi-calendar-event"></i> <u>Date</u></b> : --/--/----</p>
+              <p><b><i class="bi bi-clock"></i> <u>Current time</u></b> : --:--</p>
+            </div>
+          </div>
+
+          <div class="data_elements outer">
+            <p><b><i class="bi bi-thermometer-high"></i> <u>feels like</u></b> : --.--&degC</p>
+            <p><b><i class="bi bi-thermometer-half"></i> <u>pressurem</u></b> : ----mbar</p>
+            <p><b><i class="bi bi-droplet"></i> <u>humidity</u></b> : --%</p>
+            <p><b><i class="bi bi-brightness-high"></i> <u>UV iindex</u></b> : 0.16</p>
+            <p><b><i class="bi bi-clouds"></i> <u>clouds</u></b> : --%</p>
+            <p><b><i class="bi bi-eye-slash"></i> <u>visibility</u></b> : ---</p>
+            <p><b><i class="bi bi-wind"></i> <u>wind speed</u></b> : --.--</p>
+            <!-- <p><b><i class="bi bi-cloud-drizzle"></i> <u>Rain</u></b> : 342mm/h</p> -->
+          </div>
         </div>
       </div>
     </div>

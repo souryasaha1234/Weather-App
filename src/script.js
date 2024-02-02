@@ -26,6 +26,16 @@ getTime = function (timestamp) {
 // getTime(1549312452);
 
 window.addEventListener('load', function () {
+    var loadingScreen = document.getElementById('preloader');
+    var content = document.getElementById('content');
+
+    // Simulate a delay to demonstrate the loading effect
+    setTimeout(function () {
+        document.body.style.overflow = 'visible'; // scroll visible after loading
+        loadingScreen.style.display = 'none';
+        content.style.display = 'block';
+        content.style.opacity = 1;
+    }, 3000);
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
             //console.log(position);

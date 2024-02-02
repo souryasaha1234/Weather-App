@@ -20,12 +20,12 @@ body {
 }
 .container {
     background-color: rgba(128, 128, 128, 0.8);
-    padding: 10px;
+    padding: 30px;
     color: white;
     text-align: center;
     border-radius: 20px;
     margin: auto;
-    width: 70%;
+    width: fit-content;
     margin-top: 50px;
     box-shadow: 0px 0px 10px 2px white;
 }
@@ -35,8 +35,7 @@ body {
 
 .outer {
     display: flex;
-    /* border: 1px solid black; */
-    width: fit-content;
+    flex-direction: row;
     margin: auto;
     margin-bottom: 20px;
 }
@@ -48,13 +47,18 @@ body {
 .data_elements {
     background-color: rgba(255, 255, 255, 0.2);
     color: black;
-    width: 300px;
+    width: max-content;
     border-radius: 20px;
-    margin: 10px;
+    margin: 20px;
     text-align: center;
     box-shadow: 0px 0px 10px 2px black;
 }
 
+.sun {
+    margin: auto;
+    margin-top: inherit;
+    margin-bottom: inherit;
+}
 .sun h1 {
     font-size: 110px;
     margin: 0px;
@@ -67,4 +71,92 @@ body {
     font-size: 17px;
     margin: 10px;
     /* text-align: left; */
+}
+.hidden {
+    opacity: 0.1;
+}
+#content {
+    position: relative;
+    display: block;
+    z-index: 4;
+}
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+}
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #9370db;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+#loader:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #ba55d3;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+#loader:after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #ff00ff;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .outer {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
 }
