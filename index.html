@@ -1,57 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="src/style.css" />
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script defer src="src/script.js"></script>
-  </head>
-  <body>
-    <div id="preloader">
-      <div id="loader"></div>
-    </div>
-
-    <div id="content" class="hidden">
-      <div class="header">
-        <h1>Your current weather</h1>
-      </div>
-
-      <!-- container -->
-      <div class="container">
-        <h2><i class="bi bi-geo-alt-fill"></i> --, --</h2>
-        <h1><i class="bi bi-thermometer-half"></i> --.--&degC</h1>
-        
-        <div class="outer">
-
-          <div class="row">
-            <div class="data_elements sun">
-              <h1><i class="bi bi-brightness-alt-high-fill"></i></h1>
-              <p><b><i class="bi bi-sunrise"></i> <u>Sunrise</u></b> : --:--</p>
-            <p><b><i class="bi bi-sunset"></i> <u>Sunset</u></b> : --:--</p>
-            </div>
-            
-            <div class="data_elements">
-              <p><b><i class="bi bi-calendar-event"></i> <u>Date</u></b> : --/--/----</p>
-              <p><b><i class="bi bi-clock"></i> <u>Current time</u></b> : --:--</p>
-            </div>
-          </div>
-
-          <div class="data_elements outer">
-            <p><b><i class="bi bi-thermometer-high"></i> <u>feels like</u></b> : --.--&degC</p>
-            <p><b><i class="bi bi-thermometer-half"></i> <u>pressurem</u></b> : ----mbar</p>
-            <p><b><i class="bi bi-droplet"></i> <u>humidity</u></b> : --%</p>
-            <p><b><i class="bi bi-brightness-high"></i> <u>UV iindex</u></b> : 0.16</p>
-            <p><b><i class="bi bi-clouds"></i> <u>clouds</u></b> : --%</p>
-            <p><b><i class="bi bi-eye-slash"></i> <u>visibility</u></b> : ---</p>
-            <p><b><i class="bi bi-wind"></i> <u>wind speed</u></b> : --.--</p>
-            <!-- <p><b><i class="bi bi-cloud-drizzle"></i> <u>Rain</u></b> : 342mm/h</p> -->
-          </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Weather App</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="src/style.css" />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+        ></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script defer src="src/script.js"></script>
+    </head>
+    <body>
+        <div id="preloader">
+            <div id="loader"></div>
         </div>
-      </div>
-    </div>
-  </body>
+
+        <div id="content" class="hidden">
+          <div class="d-flex">
+            <input id="textSearch" class="form-control me-2" type="search" placeholder="Search">
+            <button type="button" class="btn btn-primary" type="button" onclick="citySetData()">Search</button>
+          </div>
+
+            <div class="header">
+                <h1>Your current weather</h1>
+            </div>
+
+            <!-- container -->
+            <div class="container">
+                <h2 class="cityAddr"><i class="bi bi-geo-alt-fill"></i> --, --</h2>
+                <h1><i class="bi bi-thermometer-half"></i> --.--&degC</h1>
+
+                <div class="outer">
+                    <div class="row">
+                        <div class="data_elements sun">
+                            <h1>
+                                <i class="bi bi-brightness-alt-high-fill"></i>
+                            </h1>
+                            <p>
+                                <b
+                                    ><i class="bi bi-sunrise"></i>
+                                    <u>Sunrise</u></b
+                                >
+                                : --:--
+                            </p>
+                            <p>
+                                <b
+                                    ><i class="bi bi-sunset"></i>
+                                    <u>Sunset</u></b
+                                >
+                                : --:--
+                            </p>
+                        </div>
+
+                        <div class="data_elements">
+                            <p>
+                                <b
+                                    ><i class="bi bi-calendar-event"></i>
+                                    <u>Date</u></b
+                                >
+                                : --/--/----
+                            </p>
+                            <p>
+                                <b
+                                    ><i class="bi bi-clock"></i>
+                                    <u>Current time</u></b
+                                >
+                                : --:--
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="data_elements outer">
+                        <p>
+                            <b
+                                ><i class="bi bi-thermometer-high"></i>
+                                <u>feels like</u></b
+                            >
+                            : --.--&degC
+                        </p>
+                        <p>
+                            <b
+                                ><i class="bi bi-thermometer-half"></i>
+                                <u>pressurem</u></b
+                            >
+                            : ----mbar
+                        </p>
+                        <p>
+                            <b><i class="bi bi-droplet"></i> <u>humidity</u></b>
+                            : --%
+                        </p>
+                        <p>
+                            <b
+                                ><i class="bi bi-brightness-high"></i>
+                                <u>UV iindex</u></b
+                            >
+                            : 0.16
+                        </p>
+                        <p>
+                            <b><i class="bi bi-clouds"></i> <u>clouds</u></b> :
+                            --%
+                        </p>
+                        <p>
+                            <b
+                                ><i class="bi bi-eye-slash"></i>
+                                <u>visibility</u></b
+                            >
+                            : ---
+                        </p>
+                        <p>
+                            <b><i class="bi bi-wind"></i> <u>wind speed</u></b>
+                            : --.--
+                        </p>
+                        <!-- <p><b><i class="bi bi-cloud-drizzle"></i> <u>Rain</u></b> : 342mm/h</p> -->
+                    </div>
+                </div>
+            </div>
+            <!-- End of content div -->
+            <script src="src/background.script"></script>
+        </div>
+    </body>
 </html>
