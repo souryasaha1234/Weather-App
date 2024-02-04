@@ -19,16 +19,29 @@
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script defer src="src/script.js"></script>
     </head>
+
     <body>
         <div id="preloader">
             <div id="loader"></div>
         </div>
 
         <div id="content" class="hidden">
-          <div class="d-flex">
-            <input id="textSearch" class="form-control me-2" type="search" placeholder="Search">
-            <button type="button" class="btn btn-primary" type="button" onclick="citySetData()">Search</button>
-          </div>
+            <div class="d-flex">
+                <input
+                    id="textSearch"
+                    class="form-control me-2"
+                    type="search"
+                    placeholder="Search"
+                />
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    type="button"
+                    onclick="citySetData()"
+                >
+                    Search
+                </button>
+            </div>
 
             <div class="header">
                 <h1>Your current weather</h1>
@@ -36,7 +49,9 @@
 
             <!-- container -->
             <div class="container">
-                <h2 class="cityAddr"><i class="bi bi-geo-alt-fill"></i> --, --</h2>
+                <div class="cityAddr">
+                    <i class="bi bi-geo-alt-fill"></i> --, --
+                </div>
                 <h1><i class="bi bi-thermometer-half"></i> --.--&degC</h1>
 
                 <div class="outer">
@@ -79,7 +94,7 @@
                         </div>
                     </div>
 
-                    <div class="data_elements outer">
+                    <div class="data_elements row">
                         <p>
                             <b
                                 ><i class="bi bi-thermometer-high"></i>

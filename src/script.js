@@ -84,7 +84,7 @@ let getSetData = async function (lat, lon) {
             const city = await getCity(lat, lon);
             console.log(city);
             let html = `
-              <h2 class="cityAddr"><i class="bi bi-geo-alt-fill"></i> ${city} </h2>
+              <div class="cityAddr"><i class="bi bi-geo-alt-fill"></i> ${city} </div>
               <h1><i class="bi bi-thermometer-half"></i> ${
                   data.current.temp
               }&degC</h1>
@@ -110,7 +110,7 @@ let getSetData = async function (lat, lon) {
                   </div>
                 </div>
 
-                <div class="data_elements">
+                <div class="data_elements row">
                   <p><b><i class="bi bi-thermometer-high"></i> <u>feels like</u></b> : ${
                       data.current.feels_like
                   }&degC</p>
