@@ -8,17 +8,24 @@ body {
     text-align: center;
     font-size: 30px;
     height: fit-content;
-    border: 1px solid white;
     border-radius: 20px;
-    margin-top: 50px;
-    width: 70%;
     margin: auto;
-    background-color: rgba(73, 67, 132, 0.5);
-    margin-top: 50px;
+    /* background-color: rgba(73, 67, 132, 0.5); */
+    display: flex;
+    flex-direction: column;
 }
 .header h1 {
-    margin: 3px;
+    margin: auto;
+    width: fit-content;
     color: rgb(255, 248, 248);
+    text-decoration: underline;
+}
+.d-flex {
+    color: black;
+    width: fit-content;
+    position: absolute;
+    right: 0;
+    margin: 10px;
 }
 .container {
     background-color: rgba(128, 128, 128, 0.8);
@@ -28,7 +35,7 @@ body {
     border-radius: 20px;
     margin: auto;
     width: max-content;
-    margin-top: 50px;
+    margin-top: 30px;
     box-shadow: 0px 0px 10px 2px white;
 }
 .container h1 {
@@ -69,9 +76,12 @@ body {
     margin: 0px;
     margin-bottom: -20px;
 }
+.weather{
+    margin: auto;
+    width: fit-content;
+    max-width: 70%;
+}
 .data_elements p {
-    /* border: 1px solid black; */
-    /* width: 45%; */
     text-transform: capitalize;
     font-size: 17px;
     margin: 10px;
@@ -158,20 +168,15 @@ body {
     }
 }
 
-.d-flex {
-    color: black;
-    width: fit-content;
-    position: absolute;
-    right: 0;
-    margin: 10px;
-    margin-top: -50px;
-}
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     .outer {
         flex-direction: column;
         margin-bottom: 20px;
+    }
+    .header {
+        flex-direction: row;
     }
 }
 .cityAddr {

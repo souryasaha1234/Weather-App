@@ -127,13 +127,18 @@ let getSetData = async function (lat, lon) {
                       data.current.clouds
                   }%</p>
                   <p><b><i class="bi bi-eye-slash"></i> <u>visibility</u></b> : ${
-                      data.current.visibility
-                  }</p>
+                      data.current.visibility/1000
+                  }km</p>
                   <p><b><i class="bi bi-wind"></i> <u>wind speed</u></b> : ${
                       data.current.wind_speed
-                  }</p>
+                  }m/sec</p>
                 </div>
               </div>
+              <div class="data_elements weather">
+                    <p>
+                        The weather will be mainly ${data.current.weather[0].main}. Specifically ${data.current.weather[0].description}
+                    </p>
+                </div>
             `;
             container.innerHTML = html;
         });
