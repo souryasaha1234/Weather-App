@@ -126,7 +126,7 @@ let getSetData = async function (lat, lon) {
                   <p><b><i class="bi bi-clouds"></i> <u>clouds</u></b> : ${
                       data.current.clouds
                   }%</p>
-                  <p><b><i class="bi bi-eye-slash"></i> <u>visibility</u></b> : ${
+                  <p><b><i class="bi bi-eye"></i> <u>visibility</u></b> : ${
                       data.current.visibility/1000
                   }km</p>
                   <p><b><i class="bi bi-wind"></i> <u>wind speed</u></b> : ${
